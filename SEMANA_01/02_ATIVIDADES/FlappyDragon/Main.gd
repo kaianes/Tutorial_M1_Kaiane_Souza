@@ -1,9 +1,38 @@
 extends Node # instancia a classe Node2D
 
 var status = 1
+
+#A variável “status” pode assumir dois valores: 1 e 0.
+#Quando assume o valor 1, o jogo começa já funcionando. 
+#Quando assume o valor 0, é como se o jogo reiniciasse e para funcionar é preciso pressionar enter. 
+#(outros valores fazem com que o jogo não funcione).
+
 var vscore = 0
-var x = 1.5 
-var y = 1.5 
+
+#A variável “vscore” assume os valores da primeira pontuação, ao passar pela primeira árvore.
+#Pode assumir valores inteiros ou quebrados.
+#Quando assume o valor 1, o score do jogo começa na pontuação 0, ao passar pela primeira árvore, o score assume o valor 2.
+#Quando assume o valor 0, o score do jogo começa na pontuação 0, ao passar pela primeira árvore, o score assume o valor 1.
+#Quando assume o valor 8, o score do jogo começa na pontuação 0, ao passar pela primeira árvore, o score assume o valor 9.
+#Quando assume o valor 7.5, o score do jogo começa na pontuação 0, ao passar pela primeira árvore, o score assume o valor 8.5
+#Ao continuar o jogo, a cada árvore passada, o score aumenta 1 número inteiro em relação ao anterior.
+
+var x = 1.5
+
+#A variável "x" assume os valores da velocidade e direção horizontal do movimento do dragão.
+#Pode assumir valores inteiros ou quebrados.
+#Para valores positivos o dragão anda para frente, para valores negativos o dragão anda para trás.
+#(controla o eixo da abiscissa do dragão)
+
+#obs: para o dragão se mover mais rápido, essa é a variável em que temos que modificar o valor.
+
+var y = 1.5
+
+#A variável "y" assume os valores da "gravidade" e direção vertical do movimento do dragão.
+#Pode assumir valores inteiros ou quebrados.
+#Para valores positivos o dragão tende para baixo, para valores negativos o dragão tende para cima.
+#(controla o eixo da ordenada do dragão)
+
 
 # executa essa função ao carregar o jogo
 func _ready():
