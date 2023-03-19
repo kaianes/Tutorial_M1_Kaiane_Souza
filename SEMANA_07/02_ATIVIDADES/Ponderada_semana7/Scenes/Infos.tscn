@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sprites/my_sprites/backgroundMenu.jpg" type="Texture" id=1]
+[ext_resource path="res://Scripts/Infos.gd" type="Script" id=2]
+[ext_resource path="res://sprites/my_sprites/delet.png" type="Texture" id=3]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="BackgroundMenu" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.352941 )
+self_modulate = Color( 0.501961, 0.494118, 0.494118, 0.690196 )
+position = Vector2( 160, 100 )
+scale = Vector2( 0.567376, 0.326241 )
+texture = ExtResource( 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 80.0
+margin_top = 16.0
+margin_right = 256.0
+margin_bottom = 211.0
+tab_size = 3
+text = "Esse é um minigame desenvolvido para a atividade ponderada da semana 07 do módulo 01.
+
+_\"Casa é onde seu coração está!\" é o título do game inspirado no tema proposto \"O que casa significa para você?\"
+                          - Kaiane
+
+"
+fit_content_height = true
+
+[node name="Delet" type="Sprite" parent="."]
+position = Vector2( 32, 32 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 3 )
+
+[node name="Button" type="Button" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 8.0
+margin_top = 16.0
+margin_right = 56.0
+margin_bottom = 48.0
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
